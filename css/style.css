@@ -1,214 +1,140 @@
-/* html {
-  box-sizing: border-box
-}
-
-/* The Universal Selector 
- All elements
-*::before, /* All ::before pseudo-elements 
-*::after { /* All ::after pseudo-elements 
-  /* height & width will now include border & padding by default
-     but can be over-ridden as needed 
-  box-sizing: inherit;
-}
-
-/* resets font size to be 62.5% of the user preference - 
-   in most browser configurations this will be 10px 
-:root {
-  font-size: 62.5%;
-}
-
-body {
-  background-color: gray;
-/* Use a system font, if none are available use an available sans-sarif   font 
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  margin: 0;
-  display: grid;
-  grid-column: 1/6;
-  align-items: center;
-	justify-content: center;
-  margin: auto;
-  text-align: center;
-  background-color: aliceblue;
-  word-spacing: auto;
-  align-items: center;
-  margin: auto;
-  grid-row: 2/5;
-  grid-column: 2/3
-}
-
-img {
-  border-radius: 20px;
-  margin: auto;
-  border-style: double;
-  border-color: aquamarine;
-  background-color: white
-  grid-row: 2/3;
-}
-h1 {
-  background-color: white;
-  grid-row: 2/3;
-}
-h4 { 
-  grid-row: 3/3;
-}
-p {
-  grid-row: 3/3;
-}
-h3 {
-  grid-row: 4/4;
-}
-h7 {
-  display: flex;
-  text-align: justify;
-  margin: auto;
-  grid-row: 4/5;
-}
-*/
 html {
   box-sizing: border-box
 }
-
-*, 
-*::before, 
 *::after { 
   box-sizing: inherit;
 }
-
 :root {
-  font-size: 62.5%;
+  font-size: 62.5%
 }
 
 body {
-  background-color: rgb(0, 90, 90);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+  background-color: rgb(39, 78, 75);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI"
     Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI" Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin: 0;
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
-
-img {
-  border: green 3px solid;
-  border-radius: 50%;
-  height: 160px;
-  width: 160px;
-}
-
 main {
-  background-color: white;
-  margin: 20px 20px 0 20px;
+  width: 350px;
+  background-color:  rgb(91, 235, 223);
+  font-size: 2rem;
   text-align: center;
-  min-width: 300px;
+}
+#status {
+  text-align: right;
+  font-size: 1.2rem;
+  color: rgb(175, 175, 175);
+  padding: 10px 10px 0 0;
+}
+img {
+  border-radius: 50%;
+  border: rgb(16, 195, 106) 5px solid;
+}
+h1, p {
+  margin: 0 auto;
+}
+h1 {
+  font-size: 3rem;
+  padding: 12px 0;
 }
 
-#status {
-  text-align: right; 
-  padding: 10px;
-  color: grey;
-  font-weight: bold; 
-  font-size: 1.2em;
+#occupation {
+  background-color: rgb(97, 96, 96);
+  padding: 20px 0;
+  padding: 10px 0;
 }
+
 #brand {
   display: none;
 }
-#occupation {
-  background-color: lightgray;
-  padding: 0;
-  font-size: 1.4em;
+#offer {
+  padding: 20px 0;
 }
-
 #contact {
-  display: flex; 
-  margin: 0;
-  padding: 0;
-  justify-content: space-between;
-  align-items: bottom;
+  display: flex;
 }
-
 #contact > p {
-  height: 60px;
-  margin: 0px;
+  height: 65px;
   width: 50%;
-  display: flex; 
-  justify-content: center;
+  display: flex;
   align-items: center;
-  background-color: rgb(77, 171, 77);
+  justify-content: center;
 }
-
+/*phone*/
 #contact > p:first-child {
-  background-color: lightgreen;
-  color: white;
-  font-size: 2em;
+  background-color: rgb(201, 219, 212);
 }
-
+/*message*/
 #contact > p:last-child {
-  color: white;
-  font-size: 2em;
+  background-color: rgb(59, 155, 99);
 }
-
-@media only screen  and (min-width: 700px) {
-    main {
-      display: grid;
-      width: 600px;
-      text-align: left;
-      grid-template-columns: 1fr 2fr;
-      grid-template-rows: auto auto auto 70px;
-      grid-template-areas: 
-        "status name"
-        "img occupation"
-        "img brand"
-        "contact offer";
-
-    }
+@media only screen and (min-width: 500px) {
+  main {
+    display: grid;
+    text-align: left;
+    width: 500px;
+    grid-template-columns: 40% 60%;
+    grid-template-areas: 
+      "status name"
+      "img occupation"
+      "img brand" 
+      "contact offer";
+  }
+  #name, #occupation, #brand, #offer {
+    padding-left: 10px;
+    background-color: rgb(5, 146, 80);
+  }
+  #status {
+    grid-area: status;
+    text-align: left;
+    padding: 10px 0 0 10px;
+  }
 
   img {
     grid-area: img;
-    margin: 5px 20px 30px 20px; 
+    margin: 0 auto;
+  }
+  #name {
+    grid-area: name;
+    margin: 0
   }
 
   #contact {
     grid-area: contact;
-    margin: 0; 
-    padding: 0;
-    height: 70px;
+  } 
+  img {
+    grid-area: img;
+    margin: 0 auto;
   }
-  #contact > p{
-    margin: 0;
-    padding: 0;
-    height: 70px;
-    color: white;
-  }
-
-  #status {
-    text-align: left;
-    padding: 10px;
-  }
-  #name, #occupation, #brand, #offer {
-    padding-left: 20px;
-    background-color: rgb(240, 240, 240);
-  }
-  #name {
-    margin: 0;
-    font-size: 2.5em;
-    padding: 20px;
+  #occupation {
+    grid-area: occupation;
   }
 
   #brand {
+    grid-area: brand;
     display: inline;
-    color: rgba(94, 94, 94, 0.788)
   }
+
+  
   #brand > p {
-    font-size: 1.3em;
-    border-left: green 3px solid; 
-    padding: 0 20px 0 14px;
+    border-left: rgb(131, 197, 160) 5px solid;
+    color: rgb(235, 250, 32);
+    padding: 0 20px 0 10px;
+    font-size: 1.5rem;
   }
+
+  #contact {
+    grid-area: contact;
+  } 
+
   #offer {
-    padding: 0 0 0 20px;
-    font-size: 1.2em;
-    line-height: 0.5em;
-    margin: 0;
-  }
-} 
+    grid-area: offer;
+    font-size: 1.5rem;
+    padding: 10px;
+  } 
+}
